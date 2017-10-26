@@ -1,0 +1,14 @@
+{
+  "name": "spreaker-webapp",
+  "version": "1.0.0",
+  "description": "A WebApp for Spreaker Podcast",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eugenio Petullà",
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "browser-sync": "^2.18.13"
+  }
+}
