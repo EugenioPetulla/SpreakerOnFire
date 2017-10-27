@@ -3,7 +3,9 @@ var app = new Vue({
   data: {
     showID: 'foo-bar',
     show: '',
-    episodes: ''
+    episodes: '',
+    episodesCount: '',
+    episodesDuration: ''
   },
   mounted: function() {
     axios.get('https://api.spreaker.com/v2/shows/'+ this.showID)
@@ -11,8 +13,9 @@ var app = new Vue({
     .catch(function(error){console.log(error)});
     
     axios.get('https://api.spreaker.com/v2/shows/'+ this.showID +'/episodes')
-    .then(response => {this.episodes = response.data.response.items})
+    .then(response => {this.episodes = response.data.response.items, this.episodesCount = Object.keys(response.data.response.items).length})
     .catch(function(error){console.log(error)});
+
   },
   methods: {
     getAudio: function(episode) {
@@ -49,10 +52,35 @@ var app = new Vue({
       
       modal.open();
     },
-    msToMinSec: function (ms) {
-      var minutes = Math.floor(ms / 60000);
-      var seconds = ((ms % 60000) / 1000).toFixed(0);
-      return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
-    }
+    msToHouMinSec: function (ms) {
+      	var seconds = (ms / 1000).toFixed(0);
+		var minutes = Math.floor(seconds / 60);
+		var hours = "";
+		if (minutes > 59) {
+		    hours = Math.floor(minutes / 60);
+		    hours = (hours >= 10) ? hours : "0" + hours;
+		    minutes = minutes - (hours * 60);
+		    minutes = (minutes >= 10) ? minutes : "0" + minutes;
+		}
+
+		seconds = Math.floor(seconds % 60);
+		seconds = (seconds >= 10) ? seconds : "0" + seconds;
+		if (hours != "") {
+		    return hours + ":" + minutes + ":" + seconds;
+		}
+		return minutes + ":" + seconds;
+    },
+    totalDuration: function() {
+  		var durations = 0;
+  		var ep = this.episodes;
+
+  		for(var j = 0; j < ep.length; j++) {
+  			durations = durations + ep[j].duration;
+
+  			console.log(durations);
+  		}
+
+  		return this.msToHouMinSec(durations);
+  	}
   }
 });

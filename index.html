@@ -33,6 +33,7 @@
 			</div>
 		</nav>
 		<div class="episodes-wrapper">
+			<div class="duration"><h3>{{ episodesCount }} Episodes ({{ totalDuration() }})</h3></div>
 			<div class="episode" v-for="episode in episodes">
 			  <a v-on:click="getAudio(episode)" class="audio-track">
 			  	<h5>
@@ -40,7 +41,7 @@
 			  		{{ episode.title }}
 			  	</h5>
 			  	<div class="duration">
-			  		{{ msToMinSec(episode.duration) }}
+			  		{{ msToHouMinSec(episode.duration) }}
 			  	</div>
 			  </a>
 			</div>
