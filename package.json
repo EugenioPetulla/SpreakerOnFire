@@ -9,10 +9,9 @@
   "author": "Eugenio Petullà",
   "license": "GPL-2.0",
   "devDependencies": {
-    "browser-sync": "^2.18.13"
-  },
-  "dependencies": {
+    "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
     "gulp-clean-css": "^3.9.0",
     "gulp-rename": "^1.2.2"
   }
