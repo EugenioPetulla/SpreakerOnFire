@@ -1,99 +1,99 @@
 /* Table of content
 /*
+/* - Variables
 /* - Generic Styles
 /* - Episodes Styles 
 /* - Modal Styles
 /*
-/*----------------------*/
-
+/*----------------------------*/
+/* Set Vars
+------------------------------*/
 /* Generic Styles
 ------------------------------*/
-
-html,body {
--webkit-font-smoothing:antialiased;
--webkit-text-size-adjust:100%;
-background-color: #1ABC9C;
-color:#fff;
-font-size:105%;
-font-family: 'Open Sans', sans-serif;
-letter-spacing:.025rem;
-line-height:1.618;
-padding:1rem 0;
-}
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  background-color: #1ABC9C;
+  color: #FFF;
+  font-size: 105%;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: .025rem;
+  line-height: 1.618;
+  padding: 1rem 0; }
 
 #app {
-  position:relative;
-  margin:0 auto;
-  max-width:800px;
-  width:100%;
-}
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bree Serif', serif;
-}
+  font-family: 'Bree Serif', serif; }
 
-h1 { font-size: 32px; }
-h2 { font-size: 28px; }
-h3 { font-size: 24px; }
-h4 { font-size: 20px; }
-h5 { font-size: 18px; }
-h6 { font-size: 16px; }
+h1 {
+  font-size: 32px; }
+
+h2 {
+  font-size: 28px; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 20px; }
+
+h5 {
+  font-size: 18px; }
+
+h6 {
+  font-size: 16px; }
 
 .topbar {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 img.align-left {
-  float:left;
+  float: left;
   margin: 10px 20px 0 0;
   border: 4px solid #FFF;
-  border-radius: 2%;
-}
+  border-radius: 2%; }
 
 .title-wrap h1 {
-  margin: 0;
-}
+  margin: 0; }
 
 .title-wrap h1 a {
-  color: #FFF;
-}
+  color: #FFF; }
 
 .title-wrap h2 {
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  margin: 0;
-}
+  margin: 0; }
 
 .title-wrap p {
   margin-top: 10px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 16px;
-}
+  font-size: 16px; }
 
 /* Episodes Styles
 ------------------------------*/
-
 .episodes-wrapper {
   margin: 20px auto;
   display: block;
   clear: both;
   position: relative;
-  width: 90%;
-}
+  width: 90%; }
 
 a.audio-track {
   width: 100%;
   background: #1ABC9C;
-  border-bottom: 1px dashed #fff;
+  border-bottom: 1px dashed #FFF;
   box-shadow: none;
   margin: 0 auto;
   padding: 10px 10px;
   display: block;
   cursor: pointer;
-  line-height: 1.2;
-}
+  line-height: 1.2; }
 
 a.audio-track h5 {
   margin: 0;
@@ -102,11 +102,10 @@ a.audio-track h5 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 80%;
-}
+  max-width: 80%; }
 
 a.audio-track h5 span {
-  border: 3px solid #fff;
+  border: 3px solid #FFF;
   border-radius: 50%;
   width: 20px;
   height: 24px;
@@ -114,42 +113,35 @@ a.audio-track h5 span {
   display: inline-block;
   text-align: center;
   line-height: 1.1;
-  margin-right: 16px
-}
+  margin-right: 16px; }
 
 a.audio-track .duration {
   display: inline-block;
   float: right;
   margin-right: 20px;
   font-weight: 700;
-  line-height: 1.8;
-}
+  line-height: 1.8; }
 
 /* Modal Styles
 ------------------------------*/
 .tingle-modal-box {
-  width: 80%;
-}
+  width: 80%; }
 
 .tingle-modal-box__content {
-  background-color: #1ABC9C;
-}
+  background-color: #1ABC9C; }
 
 .tingle-modal-box__content audio {
   width: 100%;
   background: #1ABC9C;
-  margin-top: 20px;
-}
+  margin-top: 20px; }
 
 .tingle-modal-box__content h2 {
-  margin-bottom: 0;
-}
+  margin-bottom: 0; }
 
 .tingle-modal-box__content img {
   float: right;
   border: 4px solid #FFF;
-  border-radius: 3px;
-}
+  border-radius: 3px; }
 
 .tingle-modal-box__content div.pub-download a {
   font-weight: 700;
@@ -161,43 +153,32 @@ a.audio-track .duration {
   display: inline-block;
   color: #FFF;
   text-decoration: none;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 .tingle-modal-box__content div.pub-download a:hover {
   background: #FFF;
-  color: #1ABC9C;
-}
+  color: #1ABC9C; }
 
 /* Media Queries
 ------------------------------*/
 @media (max-width: 1224px) {
   .tingle-modal-box__content h2 {
-    font-size: 22px;
-  }
-}
+    font-size: 22px; } }
 
-@media (max-width: 800px) { 
+@media (max-width: 800px) {
   img.align-left,
   .tingle-modal-box__content img {
     margin: 0;
     float: none;
-    border-radius: 50%;
-  }
+    border-radius: 50%; }
   .tingle-modal {
-    width: 100%;
-  }
+    width: 100%; }
   .tingle-modal-box {
     width: auto;
-    border-radius: 0;
-  }
+    border-radius: 0; }
   .topbar {
-    text-align: center;
-  }
+    text-align: center; }
   .title-wrap {
-    padding: 0 40px;
-  }
+    padding: 0 40px; }
   .title-wrap p {
-    display: none;
-  }
-}
+    display: none; } }

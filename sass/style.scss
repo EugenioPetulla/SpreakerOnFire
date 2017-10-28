@@ -1,0 +1,218 @@
+/* Table of content
+/*
+/* - Variables
+/* - Generic Styles
+/* - Episodes Styles 
+/* - Modal Styles
+/*
+/*----------------------------*/
+
+/* Set Vars
+------------------------------*/
+
+$accent-color: #1ABC9C;
+$font-color: #FFF;
+
+/* Generic Styles
+------------------------------*/
+
+html,body {
+-webkit-font-smoothing:antialiased;
+-webkit-text-size-adjust:100%;
+background-color: $accent-color;
+color: $font-color;
+font-size:105%;
+font-family: 'Open Sans', sans-serif;
+letter-spacing:.025rem;
+line-height:1.618;
+padding:1rem 0;
+}
+
+#app {
+  position:relative;
+  margin:0 auto;
+  max-width:800px;
+  width:100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bree Serif', serif;
+}
+
+h1 { font-size: 32px; }
+h2 { font-size: 28px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
+
+.topbar {
+  overflow: hidden;
+}
+
+img.align-left {
+  float:left;
+  margin: 10px 20px 0 0;
+  border: 4px solid $font-color;
+  border-radius: 2%;
+}
+
+.title-wrap {
+  h1 {
+  margin: 0;
+  }
+
+  h1 a {
+    color: $font-color;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  p {
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+
+/* Episodes Styles
+------------------------------*/
+
+.episodes-wrapper {
+  margin: 20px auto;
+  display: block;
+  clear: both;
+  position: relative;
+  width: 90%;
+}
+
+a.audio-track {
+  width: 100%;
+  background: $accent-color;
+  border-bottom: 1px dashed $font-color;
+  box-shadow: none;
+  margin: 0 auto;
+  padding: 10px 10px;
+  display: block;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+a.audio-track {
+  h5 {
+    margin: 0;
+    text-align: left;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80%;
+  }
+
+  h5 span {
+    border: 3px solid $font-color;
+    border-radius: 50%;
+    width: 20px;
+    height: 24px;
+    padding-left: 4px;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.1;
+    margin-right: 16px
+  }
+
+  .duration {
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+    font-weight: 700;
+    line-height: 1.8;
+  }
+}
+
+/* Modal Styles
+------------------------------*/
+
+.tingle-modal-box {
+  width: 80%;
+}
+
+.tingle-modal-box__content {
+  background-color: $accent-color;
+}
+
+.tingle-modal-box__content {
+  audio {
+    width: 100%;
+    background: $accent-color;
+    margin-top: 20px;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  img {
+    float: right;
+    border: 4px solid $font-color;
+    border-radius: 3px;
+  }
+
+  div.pub-download a {
+    font-weight: 700;
+    font-family: 'Bree Serif', serif;
+    border: 3px solid $font-color;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    display: inline-block;
+    color: $font-color;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  div.pub-download a:hover {
+    background: $font-color;
+    color: $accent-color;
+  }
+}
+
+/* Media Queries
+------------------------------*/
+
+@media (max-width: 1224px) {
+  .tingle-modal-box__content h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 800px) { 
+  img.align-left,
+  .tingle-modal-box__content img {
+    margin: 0;
+    float: none;
+    border-radius: 50%;
+  }
+  .tingle-modal {
+    width: 100%;
+  }
+  .tingle-modal-box {
+    width: auto;
+    border-radius: 0;
+  }
+  .topbar {
+    text-align: center;
+  }
+  .title-wrap {
+    padding: 0 40px;
+  }
+  .title-wrap p {
+    display: none;
+  }
+}
