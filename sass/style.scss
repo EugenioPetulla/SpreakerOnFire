@@ -1,6 +1,7 @@
 /* Table of content
 /*
 /* - Variables
+/* - Fonts Import
 /* - Generic Styles
 /* - Episodes Styles 
 /* - Modal Styles
@@ -10,8 +11,123 @@
 /* Set Vars
 ------------------------------*/
 
-$accent-color: #1ABC9C;
-$font-color: #FFF;
+$primary-color: #1ABC9C;
+$accent-color: #FFF;
+$first-font-family: 'Open Sans', sans-serif;
+$second-font-family: 'Bree Serif', serif;
+
+/* Fonts Import
+------------------------------*/
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Bold.eot');
+  src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSans-Bold.woff') format('woff'),
+    url('../fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-LightItalic.eot');
+  src: url('../fonts/OpenSans-LightItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSans-LightItalic.woff') format('woff'),
+    url('../fonts/OpenSans-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Italic.eot');
+  src: url('../fonts/OpenSans-Italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSans-Italic.woff') format('woff'),
+    url('../fonts/OpenSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-SemiBold.eot');
+  src: url('../fonts/OpenSans-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSans-SemiBold.woff') format('woff'),
+    url('../fonts/OpenSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-BoldItalic.eot');
+  src: url('../fonts/OpenSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSans-BoldItalic.woff') format('woff'),
+    url('../fonts/OpenSans-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-ExtraBoldItalic.eot');
+  src: url('../fonts/OpenSans-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSans-ExtraBoldItalic.woff') format('woff'),
+    url('../fonts/OpenSans-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-ExtraBold.eot');
+  src: url('../fonts/OpenSans-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSans-ExtraBold.woff') format('woff'),
+    url('../fonts/OpenSans-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Light.eot');
+  src: url('../fonts/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSans-Light.woff') format('woff'),
+    url('../fonts/OpenSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Regular.eot');
+  src: url('../fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSans-Regular.woff') format('woff'),
+    url('../fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-SemiBoldItalic.eot');
+  src: url('../fonts/OpenSans-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSans-SemiBoldItalic.woff') format('woff'),
+    url('../fonts/OpenSans-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Bree Serif';
+  src: url('../fonts/BreeSerif-Regular.eot');
+  src: url('../fonts/BreeSerif-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/BreeSerif-Regular.woff') format('woff'),
+    url('../fonts/BreeSerif-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* Generic Styles
 ------------------------------*/
@@ -19,10 +135,10 @@ $font-color: #FFF;
 html,body {
 -webkit-font-smoothing:antialiased;
 -webkit-text-size-adjust:100%;
-background-color: $accent-color;
-color: $font-color;
+background-color: $primary-color;
+color: $accent-color;
 font-size:105%;
-font-family: 'Open Sans', sans-serif;
+font-family: $first-font-family;
 letter-spacing:.025rem;
 line-height:1.618;
 padding:1rem 0;
@@ -36,7 +152,7 @@ padding:1rem 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bree Serif', serif;
+  font-family: $second-font-family;
 }
 
 h1 { font-size: 32px; }
@@ -53,7 +169,7 @@ h6 { font-size: 16px; }
 img.align-left {
   float:left;
   margin: 10px 20px 0 0;
-  border: 4px solid $font-color;
+  border: 4px solid $accent-color;
   border-radius: 2%;
 }
 
@@ -63,19 +179,19 @@ img.align-left {
   }
 
   h1 a {
-    color: $font-color;
+    color: $accent-color;
   }
 
   h2 {
     font-size: 18px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $first-font-family;
     font-weight: 700;
     margin: 0;
   }
 
   p {
     margin-top: 10px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $first-font-family;
     font-weight: 300;
     font-size: 16px;
   }
@@ -94,8 +210,8 @@ img.align-left {
 
 a.audio-track {
   width: 100%;
-  background: $accent-color;
-  border-bottom: 1px dashed $font-color;
+  background: $primary-color;
+  border-bottom: 1px dashed $accent-color;
   box-shadow: none;
   margin: 0 auto;
   padding: 10px 10px;
@@ -116,7 +232,7 @@ a.audio-track {
   }
 
   h5 span {
-    border: 3px solid $font-color;
+    border: 3px solid $accent-color;
     border-radius: 50%;
     width: 20px;
     height: 24px;
@@ -144,13 +260,13 @@ a.audio-track {
 }
 
 .tingle-modal-box__content {
-  background-color: $accent-color;
+  background-color: $primary-color;
 }
 
 .tingle-modal-box__content {
   audio {
     width: 100%;
-    background: $accent-color;
+    background: $primary-color;
     margin-top: 20px;
   }
 
@@ -160,26 +276,26 @@ a.audio-track {
 
   img {
     float: right;
-    border: 4px solid $font-color;
+    border: 4px solid $accent-color;
     border-radius: 3px;
   }
 
   div.pub-download a {
     font-weight: 700;
-    font-family: 'Bree Serif', serif;
-    border: 3px solid $font-color;
+    font-family: $second-font-family;
+    border: 3px solid $accent-color;
     border-radius: 4px;
     padding: 8px 16px;
     margin-top: 10px;
     display: inline-block;
-    color: $font-color;
+    color: $accent-color;
     text-decoration: none;
     text-transform: uppercase;
   }
 
   div.pub-download a:hover {
-    background: $font-color;
-    color: $accent-color;
+    background: $accent-color;
+    color: $primary-color;
   }
 }
 

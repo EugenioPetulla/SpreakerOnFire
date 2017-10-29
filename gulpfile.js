@@ -16,11 +16,7 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('live-reload', function(done) {
-	browserSync.reload();
-    done();
-});
-
+// Compile scss
 gulp.task('sass', function () {
   return gulp.src('./sass/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -28,16 +24,20 @@ gulp.task('sass', function () {
 });
 
 // Minify and rename css
-gulp.task('minify-css', function() {
+gulp.task('minify-css', ['sass'], function() {
   return gulp.src(['./css/*.css', '!./css/*.min.css'])
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./css'));
 });
 
-// create a default task and just log a message
+// Live reload task
+gulp.task('live-reload', ['minify-css'], function(done) {
+    browserSync.reload();
+    done();
+});
+
+// Create a default chained task
 gulp.task('default', ['sass', 'minify-css', 'browser-sync'], function() {
-	gulp.watch(['./sass/*.scss'], ['sass', 'minify-css']);
-    gulp.watch(['./css/*.css'], ['minify-css']);
-	gulp.watch(['./sass/*.scss', './css/*.css', '*.html', './js/*.js'], ['live-reload']);
+	gulp.watch(['./sass/*.scss', './css/*.css', '*.html', './js/*.js'], ['sass', 'minify-css', 'live-reload']);
 });
