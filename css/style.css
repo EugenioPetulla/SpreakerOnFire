@@ -130,6 +130,8 @@ h6 {
 
 .topbar {
   overflow: hidden; }
+  .topbar .show-author {
+    cursor: pointer; }
 
 img.align-left {
   float: left;
@@ -210,20 +212,21 @@ a.audio-track .duration {
 .tingle-modal-box__content {
   background-color: #1ABC9C; }
 
-.tingle-modal-box__content audio {
+.audio-modal .tingle-modal-box__content audio {
   width: 100%;
   background: #1ABC9C;
   margin-top: 20px; }
 
-.tingle-modal-box__content h2 {
-  margin-bottom: 0; }
+.audio-modal .tingle-modal-box__content h1.pub-show,
+.audio-modal .tingle-modal-box__content h2.pub-title {
+  margin: 0; }
 
-.tingle-modal-box__content img {
+.audio-modal .tingle-modal-box__content img {
   float: right;
   border: 4px solid #FFF;
   border-radius: 3px; }
 
-.tingle-modal-box__content div.pub-download a {
+.audio-modal .tingle-modal-box__content div.pub-download a {
   font-weight: 700;
   font-family: "Bree Serif", serif;
   border: 3px solid #FFF;
@@ -235,9 +238,45 @@ a.audio-track .duration {
   text-decoration: none;
   text-transform: uppercase; }
 
-.tingle-modal-box__content div.pub-download a:hover {
+.audio-modal .tingle-modal-box__content div.pub-download a:hover {
   background: #FFF;
   color: #1ABC9C; }
+
+.audio-modal .tingle-modal-box__content div.pub-author,
+.audio-modal .tingle-modal-box__content div.pub-date {
+  display: inline-block; }
+
+.audio-modal .tingle-modal-box__content div.pub-author {
+  margin-right: 5px; }
+
+.audio-modal .tingle-modal-box__content div.description {
+  white-space: pre-line;
+  padding: 10px 5%; }
+
+.author-modal .tingle-modal-box__content {
+  overflow: auto; }
+  .author-modal .tingle-modal-box__content img {
+    border-radius: 50%; }
+  .author-modal .tingle-modal-box__content h1 {
+    margin: 0; }
+  .author-modal .tingle-modal-box__content p {
+    margin-top: 0; }
+  .author-modal .tingle-modal-box__content .author-links a {
+    color: #FFF;
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 12px;
+    border: 4px solid #FFF;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    line-height: 1.6;
+    border-radius: 50%;
+    background-color: #1ABC9C;
+    transition: all 350ms linear; }
+  .author-modal .tingle-modal-box__content .author-links a:hover {
+    background-color: #FFF;
+    color: #1ABC9C; }
 
 /* Media Queries
 ------------------------------*/
@@ -256,6 +295,10 @@ a.audio-track .duration {
   .tingle-modal-box {
     width: auto;
     border-radius: 0; }
+  .tingle-modal-box__content {
+    text-align: center; }
+    .tingle-modal-box__content div.description {
+      text-align: left; }
   .topbar {
     text-align: center; }
   .title-wrap {

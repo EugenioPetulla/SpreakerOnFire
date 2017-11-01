@@ -164,6 +164,10 @@ h6 { font-size: 16px; }
 
 .topbar {
   overflow: hidden;
+
+  .show-author {
+    cursor: pointer;
+  }
 }
 
 img.align-left {
@@ -263,15 +267,16 @@ a.audio-track {
   background-color: $primary-color;
 }
 
-.tingle-modal-box__content {
+.audio-modal .tingle-modal-box__content {
   audio {
     width: 100%;
     background: $primary-color;
     margin-top: 20px;
   }
 
-  h2 {
-    margin-bottom: 0;
+  h1.pub-show,
+  h2.pub-title {
+    margin: 0;
   }
 
   img {
@@ -295,6 +300,56 @@ a.audio-track {
 
   div.pub-download a:hover {
     background: $accent-color;
+    color: $primary-color;
+  }
+
+  div.pub-author,
+  div.pub-date {
+    display: inline-block;
+  }
+
+  div.pub-author {
+    margin-right: 5px;
+  }
+
+  div.description {
+    white-space: pre-line;
+    padding: 10px 5%;
+  }
+}
+
+.author-modal .tingle-modal-box__content {
+  overflow: auto;
+
+  img{
+    border-radius: 50%;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  .author-links a {
+      color: $accent-color;
+      font-size: 24px;
+      display: inline-block;
+      margin-right: 12px;
+      border: 4px solid $accent-color;
+      width: 48px;
+      height: 48px;
+      text-align: center;
+      line-height: 1.6;
+      border-radius: 50%;
+      background-color: $primary-color;
+      transition: all 350ms linear;
+  }
+
+  .author-links a:hover {
+    background-color: $accent-color;
     color: $primary-color;
   }
 }
@@ -321,6 +376,12 @@ a.audio-track {
   .tingle-modal-box {
     width: auto;
     border-radius: 0;
+  }
+  .tingle-modal-box__content {
+    text-align: center;
+    div.description {
+      text-align: left;
+    }
   }
   .topbar {
     text-align: center;

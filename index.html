@@ -3,14 +3,15 @@
 <head>
 	<title>Your Spreaker Show WebApp</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Import Vue.js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+	<!-- Vue.js -->
+	<script src="js/vue.min.js"></script>
 	<!-- Import axios.js for mange http request in order to get remote API content -->
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<!-- Import tingle in order to easily create JS modal -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.12.0/tingle.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.12.0/tingle.min.js"></script>
-	<!-- Inizialize app.js and style.css -->
+	<script src="js/axios.min.js"></script>
+	<!-- Tingle JS modal -->
+	<script src="js/tingle.min.js"></script>
+	<!-- style.css and tingle.css -->
+	<link rel="stylesheet" href="css/tingle.min.css">
+	<link rel="stylesheet" href="css/ionicons.min.css">
 	<link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -24,7 +25,7 @@
 			  	</a>
 			  </h1>
 			  <h2>
-			  	di {{ show.author.fullname }}
+			  	di <a v-on:click="getAuthor()" class="show-author">{{ show.author.fullname }}</a>
 			  </h2>
 			  <p>
 			  	{{ show.description }}
@@ -34,7 +35,7 @@
 		<div class="episodes-wrapper">
 			<div class="duration"><h3>{{ episodesCount }} Episodes ({{ totalDuration() }})</h3></div>
 			<div class="episode" v-for="episode in episodes">
-			  <a v-on:click="getAudio(episode)" class="audio-track">
+			  <a v-on:click="getEpisode(episode.episode_id)" class="audio-track">
 			  	<h5>
 			  		<span>&#9654;</span>
 			  		{{ episode.title }}
